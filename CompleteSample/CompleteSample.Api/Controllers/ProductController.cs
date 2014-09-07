@@ -6,6 +6,7 @@ using System.Web.Http.Description;
 
 namespace CompleteSample.Api.Controllers
 {
+    [Authorize]
     [RoutePrefix("products")]
     public class ProductController : ApiController
     {
