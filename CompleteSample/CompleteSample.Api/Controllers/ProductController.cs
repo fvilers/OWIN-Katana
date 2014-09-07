@@ -12,7 +12,7 @@ namespace CompleteSample.Api.Controllers
     {
         private static readonly ISet<Product> Products = new HashSet<Product>();
 
-        public ProductController()
+        static ProductController()
         {
             Products.Add(new Product
             {
@@ -61,18 +61,26 @@ namespace CompleteSample.Api.Controllers
                         select p;
             var product = query.FirstOrDefault();
 
+            if (product == null)
+            {
+                return NotFound();
+            }
+
             return Ok(product);
         }
 
         [HttpPost]
+        [Route("")]
         public IHttpActionResult Create(Product product)
         {
             if (ModelState.IsValid)
             {
                 Products.Add(product);
+
+                return CreatedAtRoute("GetProduct", new { id = product.Id }, product);
             }
 
-            return CreatedAtRoute("GetProduct", new { id = product.Id }, product);
+            return BadRequest();
         }
 
         [HttpPut]
