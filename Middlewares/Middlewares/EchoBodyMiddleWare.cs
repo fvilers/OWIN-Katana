@@ -31,6 +31,7 @@ namespace Middlewares
                     var body = await reader.ReadToEndAsync();
                     var bytes = Encoding.UTF8.GetBytes(body);
 
+                    response.ContentLength = bytes.Length;
                     await response.WriteAsync(bytes);
                 }
             }
