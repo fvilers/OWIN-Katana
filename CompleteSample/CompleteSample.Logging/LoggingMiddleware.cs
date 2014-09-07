@@ -17,10 +17,12 @@ namespace CompleteSample.Logging
             var sw = new Stopwatch();
             sw.Start();
 
+            Console.Write("{0} {1}", context.Request.Method, context.Request.Path);
+
             await Next.Invoke(context);
             sw.Stop();
 
-            Console.WriteLine("Request elapsed time: {0} ms", sw.ElapsedMilliseconds);
+            Console.WriteLine(" ({0} ms)", sw.ElapsedMilliseconds);
         }
     }
 }
