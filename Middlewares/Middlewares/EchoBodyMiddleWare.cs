@@ -22,12 +22,11 @@ namespace Middlewares
         {
             var context = new OwinContext(environment);
 
-            if (context.Request.Method == "POST")
+            if (context.Request.Method == "POST" && context.Request.User.IsInRole("echo"))
             {
-                var response = context.Response;
-
                 using (var reader = new StreamReader(context.Request.Body))
                 {
+                    var response = context.Response;
                     var body = await reader.ReadToEndAsync();
                     var bytes = Encoding.UTF8.GetBytes(body);
 

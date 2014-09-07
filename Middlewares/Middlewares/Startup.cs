@@ -6,6 +6,7 @@ namespace Middlewares
     {
         public void Configuration(IAppBuilder app)
         {
+            app.Use<SetUserMiddleWare>();
             app.Use<EchoBodyMiddleWare>();
         }
     }
