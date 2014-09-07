@@ -20,17 +20,27 @@ namespace Middlewares
         public async Task Invoke(IDictionary<string, object> environment)
         {
             var context = new OwinContext(environment);
+            await BufferRequestStreamAsync(context.Request);
 
-            using (var reader = new StreamReader(context.Request.Body))
-            {
-                var json = await reader.ReadToEndAsync();
-                var user = JsonConvert.DeserializeObject<User>(json);
-                var identity = new GenericIdentity(user.Name);
+            // reader is not disposed to ensure the stream will be available for other middlewares
+            var reader = new StreamReader(context.Request.Body);
+            var json = await reader.ReadToEndAsync();
+            var user = JsonConvert.DeserializeObject<User>(json);
+            var identity = new GenericIdentity(user.Name);
 
-                context.Request.User = new GenericPrincipal(identity, new[] { "echo" });
-            }
+            context.Request.User = new GenericPrincipal(identity, new[] { "echo" });
+            context.Request.Body.Seek(0L, SeekOrigin.Begin);
 
             await _next(environment);
+        }
+
+        private static async Task BufferRequestStreamAsync(IOwinRequest request)
+        {
+            var requestStream = new MemoryStream();
+
+            await request.Body.CopyToAsync(requestStream);
+            requestStream.Seek(0L, SeekOrigin.Begin);
+            request.Body = requestStream;
         }
     }
 
