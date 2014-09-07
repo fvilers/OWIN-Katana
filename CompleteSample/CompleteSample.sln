@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CompleteSample.Logging", "C
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CompleteSample.Authentication", "CompleteSample.Authentication\CompleteSample.Authentication.csproj", "{C4994CEB-2C9E-4CA2-A796-3F986840E431}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CompleteSample.Api", "CompleteSample.Api\CompleteSample.Api.csproj", "{0504894B-F3C2-435C-98BA-81BBFF53B65E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{C4994CEB-2C9E-4CA2-A796-3F986840E431}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C4994CEB-2C9E-4CA2-A796-3F986840E431}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C4994CEB-2C9E-4CA2-A796-3F986840E431}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0504894B-F3C2-435C-98BA-81BBFF53B65E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0504894B-F3C2-435C-98BA-81BBFF53B65E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0504894B-F3C2-435C-98BA-81BBFF53B65E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0504894B-F3C2-435C-98BA-81BBFF53B65E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
