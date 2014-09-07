@@ -17,6 +17,10 @@ namespace Middlewares
 
         public async Task Invoke(IDictionary<string, object> environment)
         {
+            var headers = (IDictionary<string, string[]>)environment["owin.ResponseHeaders"];
+
+            headers["X-Generated-By"] = new[] { "RawMiddleware" };
+
             await _next(environment);
         }
     }
