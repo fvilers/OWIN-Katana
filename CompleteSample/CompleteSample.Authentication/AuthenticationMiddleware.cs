@@ -18,17 +18,15 @@ namespace CompleteSample.Authentication
             BasicAuthenticationCredentials credentials;
 
             if (context.Request.Headers.TryGetValue("Authorization", out values)
-                && BasicAuthenticationCredentials.TryParse(values.First(), out credentials))
+                && BasicAuthenticationCredentials.TryParse(values.First(), out credentials)
+                && Authenticate(credentials.UserName, credentials.Password))
             {
-                if (Authenticate(credentials.UserName, credentials.Password))
-                {
-                    var identity = new GenericIdentity(credentials.UserName);
-                    context.Request.User = new GenericPrincipal(identity, new string[0]);
-                }
-                else
-                {
-                    context.Response.StatusCode = 401; // Unauthorized
-                }
+                var identity = new GenericIdentity(credentials.UserName);
+                context.Request.User = new GenericPrincipal(identity, new string[0]);
+            }
+            else
+            {
+                context.Response.StatusCode = 401; // Unauthorized
             }
 
             return Next.Invoke(context);
