@@ -1,4 +1,5 @@
 ﻿using Microsoft.Owin;
+using System;
 using System.Diagnostics;
 using System.Threading.Tasks;
 
@@ -19,7 +20,7 @@ namespace CompleteSample.Logging
             await Next.Invoke(context);
             sw.Stop();
 
-            // TODO: Log the request and its execution time
+            Console.WriteLine("Request elapsed time: {0} ms", sw.ElapsedMilliseconds);
         }
     }
 }
