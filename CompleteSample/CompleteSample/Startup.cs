@@ -1,4 +1,5 @@
-﻿using CompleteSample.Logging;
+﻿using CompleteSample.Authentication;
+using CompleteSample.Logging;
 using Owin;
 
 namespace CompleteSample
@@ -8,6 +9,7 @@ namespace CompleteSample
         public void Configuration(IAppBuilder app)
         {
             app.Use<LoggingMiddleware>();
+            app.Use<AuthenticationMiddleware>();
         }
     }
 }

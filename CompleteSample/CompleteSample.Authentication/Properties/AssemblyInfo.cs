@@ -4,11 +4,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("CompleteSample.Logging")]
+[assembly: AssemblyTitle("CompleteSample.Authentication")]
 [assembly: AssemblyDescription("")]
-[assembly: AssemblyConfiguration("Dev One")]
-[assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("CompleteSample.Logging")]
+[assembly: AssemblyConfiguration("")]
+[assembly: AssemblyCompany("Dev One")]
+[assembly: AssemblyProduct("CompleteSample.Authentication")]
 [assembly: AssemblyCopyright("Copyright © Dev One 2014")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -19,7 +19,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("6d53ff6c-55c4-4358-a784-efbf998cc9ad")]
+[assembly: Guid("a24f239c-830b-4d44-8c3a-3381371f8a62")]
 
 // Version information for an assembly consists of the following four values:
 //
