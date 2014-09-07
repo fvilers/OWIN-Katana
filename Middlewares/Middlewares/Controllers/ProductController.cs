@@ -2,7 +2,7 @@
 
 namespace Middlewares.Controllers
 {
-    [RoutePrefix("products")]
+    [RoutePrefix("api/products")]
     public class ProductController : ApiController
     {
         [HttpGet]
