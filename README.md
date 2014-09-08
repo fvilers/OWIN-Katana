@@ -1,8 +1,8 @@
 OWIN-Katana
 ===========
-These are the samples for the demonstration I've given on the 8th of September 2014 at the Microsoft Innovation Center in Mons.
+These are the code samples I've demonstrated on the [DevFM #10 : OWIN & Katana](http://www.eventbrite.com/e/devfm-10-owin-katana-tickets-12380830397) event at the [Microsoft Innovation Center](http://www.mic-belgique.be) in Mons, Belgium.
 
-This repository contains 5 samples with different iteration of them.
+This repository contains 5 samples with different iterations.
 
 1. HelloWorld
 	- [Raw](https://github.com/fvilers/OWIN-Katana/releases/tag/hello-world-raw): an inline delegate that returns the well-known **Hello, world!** message;
@@ -14,6 +14,7 @@ This repository contains 5 samples with different iteration of them.
 	- [Both ways](https://github.com/fvilers/OWIN-Katana/releases/tag/chaining-both-ways): an example of how the request and response navigates in the OWIN pipeline;
 3. Conditionals
 	- [Nested app](https://github.com/fvilers/OWIN-Katana/releases/tag/conditionals-nested-app): a nested app that responds to a specific path;
+	- [More nested app](https://github.com/fvilers/OWIN-Katana/releases/tag/conditionals-nested-app-more): a nested app with two level of depth;
 	- [When condition](https://github.com/fvilers/OWIN-Katana/releases/tag/conditionals-nested-app-when-condition): a nested app that responds to a specific path **and** when a condition is met;
 4. Middlewares
 	- [Custom classes](https://github.com/fvilers/OWIN-Katana/releases/tag/middlewares-custom-class): an example of how to create custom middleware classes;
