@@ -21,4 +21,4 @@ This repository contains 5 samples with different iterations.
 	- [Reading request](https://github.com/fvilers/OWIN-Katana/releases/tag/middlewares-reading-request): demoing how to read the request body stream multipe times;
 	- [WebAPI](https://github.com/fvilers/OWIN-Katana/releases/tag/middlewares-webapi): an example of how to integrate ASP.NET Web API into an OWIN pipeline;
 5. CompleteSample
-	- [CompleteSample](https://github.com/fvilers/OWIN-Katana/releases/tag/complete-sample): a complete sample of a pipleine with 3 actual middlewares (loggin, authentication and Web API)
+	- [CompleteSample](https://github.com/fvilers/OWIN-Katana/releases/tag/complete-sample): a complete sample of a pipleine with 3 actual middlewares (logging, authentication and Web API)
